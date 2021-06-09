@@ -1,6 +1,6 @@
 //import liraries
 import React, { Component } from 'react';
-import { Text, View, Image, TextInput, TouchableOpacity, Alert } from 'react-native';
+import { Text, View, Image, TextInput, TouchableOpacity, Alert, ImageBackground } from 'react-native';
 
 import styles from '../styles/ManipulandoStyles';
 
@@ -17,7 +17,10 @@ class Login extends Component {
 
   render() {
     return (
-      <View style={styles.container}>
+      <ImageBackground 
+        source={require('../image/reactnative.png')}
+        style={styles.imageBack}>
+  
         <Image source={require('../image/reactn.png')} style={styles.logo} />
         <TextInput style={styles.input} onChangeText = {text => this.state.nome = text} placeholder="Informe seu nome" />
         <TextInput style={styles.input} onChangeText = {text => this.state.email = text} placeholder="Informe seu e-mail" />
@@ -31,7 +34,7 @@ class Login extends Component {
           style={styles.button} onPress={() => { this.props.navigation.navigate('Cadastro')}}>
           <Text style={styles.buttonText}>Cadastrar</Text>
         </TouchableOpacity>
-      </View>
+    </ImageBackground>
     );
   };
 }
